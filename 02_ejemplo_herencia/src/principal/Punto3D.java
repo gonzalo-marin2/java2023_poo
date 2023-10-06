@@ -6,7 +6,7 @@ public class Punto3D extends Punto {
 		this.z=z;
 	}
 	
-	public Punto3D(int x, int y, int z) {
+	public Punto3D(int x, int y, int z) {//Constructor
 		//super();//hace una llamada desde la subclase
 		super(x,y);//llamamos al constructor de la superclase
 		this.z=z;
