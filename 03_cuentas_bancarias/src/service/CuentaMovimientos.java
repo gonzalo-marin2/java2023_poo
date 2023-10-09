@@ -27,16 +27,13 @@ public class CuentaMovimientos extends CuentaLimite {
 	@Override
 	public void extraer(double cantidad) {
 		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "extracción"));
-		super.extraer(cantidad);
-		
-		
+		super.extraer(cantidad);	
 	}
 
 	@Override
 	public void ingresar(double cantidad) {
 		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "ingreso"));
 		super.ingresar(cantidad);
-		
 	}
 	
 	
