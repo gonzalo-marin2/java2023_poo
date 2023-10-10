@@ -18,21 +18,19 @@ public class CuentaMovimientos extends CuentaLimite {
 		super(codigoCuenta, saldo,limite);	
 	}
 
-	
-	public ArrayList<Movimiento> obtenerMovimientos(){
+	public ArrayList<Movimiento> obtenerMovimientos(){//Obtenemos los movimientos
 		return movimientos;
 	}
 
-
 	@Override
 	public void extraer(double cantidad) {
-		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "extracción"));
+		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "extracción"));//añadimos los datos de los movimientos
 		super.extraer(cantidad);	
 	}
 
 	@Override
 	public void ingresar(double cantidad) {
-		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "ingreso"));
+		movimientos.add(new Movimiento(cantidad,LocalDateTime.now(), "ingreso"));//añadimos los datos de los movimientos
 		super.ingresar(cantidad);
 	}
 	
