@@ -1,5 +1,7 @@
 package geometria;
-
+/*Hacer 2 clases de figura: triángulo y círculo
+ * Atributos de triángulo: base y altura
+ * Atributos de círculo: radio*/
 public abstract class Figura {
 	private String color;
 
