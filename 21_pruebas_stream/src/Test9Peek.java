@@ -8,10 +8,13 @@ public class Test9Peek {
 		
 		System.out.println(nums.stream()
 				.filter(n->n>0)
-				.peek(n->System.out.println(n))//Stream integer
+				.peek(n->System.out.println(n))//Stream integer, al ser un método intermedio, no hace nada,funcionamiento modo lazy
 				.mapToInt(n->n)//IntStream
 				.sum());
-
+		/*nums.stream()
+		.filter(n->n>0)
+		.peek(n->System.out.println(n));*/
+		//No se procesa si no hay operación final
 	}
 
 }

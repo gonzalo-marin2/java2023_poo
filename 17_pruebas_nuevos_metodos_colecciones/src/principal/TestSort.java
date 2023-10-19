@@ -23,6 +23,7 @@ public class TestSort {
 		//Ordenar alfabéticamente
 		List<String> cadenas=new ArrayList<>(List.of("Marcos","Lucas","Laura","Angela","Elena"));
 		cadenas.sort((a,b)->a.compareTo(b));//pasamos las cadenas, luego las comparamos
+		//cadenas.sort(String::compareTo);
 		cadenas.forEach(n->System.out.println(n));
 		cadenas.sort((a,b)->a.compareToIgnoreCase(b));//Ignora las mayúsculas
 		cadenas.forEach(n->System.out.println(n));

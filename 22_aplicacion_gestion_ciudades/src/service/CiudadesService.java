@@ -2,7 +2,7 @@ package service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 import model.Ciudad;
 
@@ -71,7 +71,22 @@ public class CiudadesService {
 		return ciudades.stream()//stream<Ciudad>
 				.mapToDouble(c->c.getTemperaturaMedia())
 				.max()
-				.orElse(0);
-				
+				.orElse(0);		
+	}
+	
+	//A partir de un país devuelve la lista de ciudades de dicho país
+	public List<Ciudad> ciudadesPais(String pais){
+		return ciudades.stream()
+				.filter(c->c.getPais().equals(pais))//Stream<Ciudad>
+				.collect(Collectors.toList());
+				//.toList() ==> tb valdría, pero ojo, solo a partir de java 16
+	}
+	
+	//Devuelve una lista con los nombres de los países
+	public List<String> nombresPaises(){
+		return ciudades.stream()
+				.map(c->c.getPais())//Stream<String>
+				.distinct()//Borramos duplicados
+				.collect(Collectors.toList());//Creamos la lista
 	}
 }

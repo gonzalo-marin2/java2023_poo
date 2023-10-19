@@ -13,6 +13,8 @@ public class TestForeach {
 		}*/
 		//En lugar de hacer lo anterior, hacemos:
 		numeros.forEach(n->System.out.println(n));//esto es programación funcional
+		//se puede sustituir por:
+		//numeros.forEach(System.out::println);
 		//forEach tb está implementado en Map y en Set
 		
 		//Datos del ejercicio 31 básicos
