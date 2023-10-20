@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Test8Map {
 
@@ -13,21 +14,24 @@ public class Test8Map {
 		
 		
 		//mostrar el total de caracteres de todos los productos, sin contar los repetidos
-		System.out.println(
+		System.out.println("Esta es la suma: "+
 				Arrays.stream(nombres.split("[, -]"))//Stream<string>, hemos creado una cadena sin espacios ni comas ni guiones
 				.distinct()//Stream<string>, borramos los repetidos
-				.mapToInt(s->s.length())//IntStream, transformamos los string en enteros
-				.sum());
+				/*.mapToInt(s->s.length())//IntStream, transformamos los string en enteros
+				.sum());*/
+				.collect(Collectors.summingInt(s->s.length())));
 		
+		//Método para sacar la media
 		List<Integer> nums=List.of(6,11,-4,8,-1,10,8,2,11,27,-5,-4,41,10);
-		System.out.println(
+		System.out.println("Esta es la media: "+
 				nums.stream()//Stream de enteros
 				//.distinct()//Stream de enteros sin repetidos. Si no especifica, no hace falta usarlo
 				.filter(n->n>0)//stream<Integer> positivos
-				.mapToInt(n->n)//Genera un IntStream, hay que transformarlo
+				/*.mapToInt(n->n)//Genera un IntStream, hay que transformarlo
 				.average()
 				.orElse(0)
-				);
+				);*/
+				.collect(Collectors.averagingDouble(n->n)));//llamando a collector nos ahorramos las tres líneas anteriores
 
 	}
 
