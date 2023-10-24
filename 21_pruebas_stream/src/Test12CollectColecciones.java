@@ -29,7 +29,7 @@ public class Test12CollectColecciones {
 		
 		List<String> empleados2=List.of("ventas-Angel","administracion-Ana","ventas-Esteban",
 				"ventas-Javier","informatica-Laura","administracion-Lucas");
-		Map<String,List<String>> division=empleados2.stream()
+		Map<String,List<String>> division=empleados2.stream()//generamos un map desde el stream
 				.collect(Collectors.groupingBy(s->s.split("-")[0]));//agrupa los datos con la primera posición
 		division.forEach((k,v)->System.out.println(k+":"+v));//recorremos el map para que nos muestre los valores
 		/*ventas:[ventas-Angel, ventas-Esteban, ventas-Javier]
